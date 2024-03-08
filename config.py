@@ -20,7 +20,7 @@ class Config(object):
     TG_MAX_SIZE = 2040108421
     BOT_UPTIME = time.time()
     START_PIC = os.environ.get("START_PIC", "")
-    ADMIN = [int(admin) if id_pattern.search(admin) else admin for admin in os.environ.get('ADMIN', '').split()]  # ⚠️ Required
+    ADMIN = int(os.environ.get('ADMIN', '7130683758')) # ⚠️ Required
     
     FORCE_SUB = os.environ.get('FORCE_SUB', '') # ⚠️ Required without [@]
     LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", ""))  # ⚠️ Required
