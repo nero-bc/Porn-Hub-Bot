@@ -91,29 +91,19 @@ async def run_async(func, *args, **kwargs):
     return await loop.run_in_executor(None, func, *args, **kwargs)
 
 
-def edit_msg(client, message, to_edit):
-    try:
-        client.loop.create_task(message.edit(to_edit))
-    except FloodWait as e:
-        client.loop.create_task(asyncio.sleep(e.value))
-    except MessageNotModified:
-        pass
-    except TypeError:
-        pass
 
-
-def download_progress_hook(d, message, client):
+def download_progress_hook(d, progress_message, link):
     if d['status'] == 'downloading':
-        current = d.get("_downloaded_bytes_str") or humanbytes(
-            int(d.get("downloaded_bytes", 1)))
-        total = d.get("_total_bytes_str") or d.get("_total_bytes_estimate_str")
-        file_name = d.get("filename")
-        eta = d.get('_eta_str', "N/A")
-        percent = d.get("_percent_str", "N/A")
-        speed = d.get("_speed_str", "N/A")
-        to_edit = f"📥 <b>Downloading!</b>\n\n<b>Name :</b> <code>{file_name}</code>\n<b>Size :</b> <code>{total}</code>\n<b>Speed :</b> <code>{speed}</code>\n<b>ETA :</b> <code>{eta}</code>\n\n<b>Percentage: </b> <code>{current}</code> from <code>{total} (__{percent}__)</code>"
-        threading.Thread(target=edit_msg, args=(
-            client, message, to_edit)).start()
+        percentage = d['_percent_str']
+        speed = d['_speed_str']
+        eta = d['_eta_str']
+        file_name = d.get("filename").split('\\')[-1]
+        message = f"📥 <b>Downloading!</b>\n\n<b>Name :</b> <code>{file_name}</code>\n<b>Downloading:</b> <code>{percentage}</code>\n<b>Speed:</b> <code>{speed}</code>\n<b>ETA:</b> <code>{eta}</code>"
+        try:
+            progress_message.edit_text(message, disable_web_page_preview=True)
+        except:
+            pass
+
 
 
 def get_thumbnail_url(video_url):
@@ -157,10 +147,6 @@ def get_porn_thumbnail_url(video_url):
             print(e)
             return None
 
-
-async def run_async(func, *args, **kwargs):
-    loop = asyncio.get_running_loop()
-    return await loop.run_in_executor(None, func, *args, **kwargs)
 
 
 async def single_download(bot, update, http_link):
@@ -217,6 +203,5 @@ async def single_download(bot, update, http_link):
                 break
         else:
             continue
-    
-    os.remove(f'downloads\{update.from_user.id}')
+
     await msg.delete()
