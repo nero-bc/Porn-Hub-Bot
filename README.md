@@ -6,11 +6,11 @@
 
 ## Deploy To Koyeb ⚠️ Deploy On EU Server
 
-[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Snowball-0/Porn-Mega-Downloader-TG&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[WEBHOOK]=True&env[ADMIN]&env[DB_URL]&env[DB_NAME]=SnowPro_Users&env[FORCE_SUB]&env[START_PIC]&env[LOG_CHANNEL]&run_command=python%20bot.py&branch=main&name=Porn-Mega-Downloader-TG) 
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=git&repository=github.com/Snowball-01/Porn-Hub-Bot&env[BOT_TOKEN]&env[API_ID]&env[API_HASH]&env[WEBHOOK]=True&env[ADMIN]&env[DB_URL]&env[DB_NAME]=SnowPro_Users&env[FORCE_SUB]&env[START_PIC]&env[LOG_CHANNEL]&run_command=python%20bot.py&branch=main&name=Porn-Mega-Downloader-TG) 
 
 ## Deploy To Render ⚠️ Deploy On EU Server
 
-[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Snowball-0/Porn-Mega-Downloader-TG)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Snowball-01/Porn-Hub-Bot)
 
 ## Deploy To Railway ⚠️ Deploy On EU Server
 
@@ -18,7 +18,7 @@
 
 ## Deploy To Heroku ⚠️ Deploy On EU Server
 
-<a href="https://heroku.com/deploy?template=https://github.com/Snowball-0/Porn-Mega-Downloader-TG"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
+<a href="https://heroku.com/deploy?template=https://github.com/Snowball-01/Porn-Hub-Bot"><img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy"></a>
 
 
 ## Configs 
