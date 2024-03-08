@@ -19,3 +19,4 @@ pyromod
 hurry.filesize
 git+https://github.com/Snowball-01/mega.py.git
 wget
+ffmpeg-python
