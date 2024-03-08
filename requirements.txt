@@ -6,7 +6,7 @@ pyromod
 pornhub-api==0.2.0
 TgCrypto
 pyproject-toml
-youtube-dl
+youtube-dl==2021.6.6
 youtube-search-python
 youtube-search
 yt-dlp
