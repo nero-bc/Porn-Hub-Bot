@@ -105,7 +105,7 @@ async def handle_yt_dl(bot: Client, cmd: Message):
     
     btn = [[InlineKeyboardButton('🔻 Download 🔻', callback_data='http_link')]]
     
-    if int(cmd.from_user.id) == Config.ADMIN:
+    if cmd.from_user.id == Config.ADMIN:
         btn.append([InlineKeyboardButton('🖇️ Add Multiple Links 🖇️', callback_data='multiple_http_link')])
 
     await cmd.reply_text("**Do you want to download this file ?**", reply_to_message_id=cmd.id, reply_markup=InlineKeyboardMarkup(btn))
