@@ -22,6 +22,7 @@
   ],
   "repository": "https://github.com/Snowball-01/Porn-Hub-Bot",
   "success_url": "",
+  "stack": "container",
   "env": {
     "API_ID": {
       "description": "Your APP ID From my.telegram.org ",
